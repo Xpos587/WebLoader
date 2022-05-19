@@ -12,8 +12,9 @@ def DownloadVideo(url, resolution):
         itag = QualityResolution(resolution)
         video = pytube.YouTube(url)
         stream = video.streams.get_by_itag(itag)
-        stream.download(filename = stream.default_filename.replace('.mp4', f' - {resolution}.mp4'))
-        return stream.default_filename
+        file = stream.default_filename.replace('.mp4', f' - {resolution}.mp4')
+        stream.download(filename = file)
+        return file
     except Exception as err:
         print(err)
         return 'Видео не поддерживает данное качество видео'
@@ -37,7 +38,7 @@ def DownloadPlaylist(url, resolution):
 @eel.expose
 def DownloadMusic(url):
     try:
-        mp4 = DownloadVideo(url, 'low')
+        mp4 = DownloadVideo(url, '360p')
         Convertion(mp4)
         os.remove(mp4)
     except Exception as err:
