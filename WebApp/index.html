@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" href="assets/imgs/logo.png">
+    <script src="eel.js"></script>
+    <title>Youtube Loader</title>
+</head>
+
+<body>
+    <span id="console">Вывод...</span>
+    <div class="container">
+        <h2>Вставьте ссылку на ютуб видео</h2>
+        <div class="form-control">
+            <input type="text" id="url" required></input>
+            <label>Ссылка</label>
+        </div>
+        <div class="settings">
+            <div class="setting">
+                <label>Качество видео</label>
+                <select name="Качество видео" id="quality">
+                    <option value="veryhigh">2160p</option>
+                    <option value="high">1080p</option>
+                    <option value="medium" selected>720p</option>
+                    <option value="low">360p</option>
+                </select>
+            </div>
+            <div class="setting">
+                <label id='button' for="video">Скачать видео</label>
+                <input type="radio" name="type" id="video" class="toggle" checked>
+            </div>
+            <div class="setting">
+                <label id='button' for="playlist">Скачать плэйлист</label>
+                <input type="radio" name="type" id="playlist" class="toggle">
+            </div>
+            <div class="setting">
+                <label id='button' for="music">Скачать видео в формате mp3</label>
+                <input type="radio" name="type" id="music" class="toggle">
+            </div>
+        </div>
+
+        <button class="btn btn-large ripple" id="download">Скачать</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
